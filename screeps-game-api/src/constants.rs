@@ -221,6 +221,25 @@ impl TryFrom<Value> for Direction {
     }
 }
 
+impl ::std::ops::Neg for Direction {
+    type Output = Direction;
+
+    fn neg(self) -> Direction {
+        use Direction::*;
+
+        match self {
+            Top => Bottom,
+            TopRight => BottomLeft,
+            Right => Left,
+            BottomRight => TopLeft,
+            Bottom => Top,
+            BottomLeft => TopRight,
+            Left => Right,
+            TopLeft => BottomRight,
+        }
+    }
+}
+
 enum_from_primitive! {
     #[repr(u32)]
     #[derive(Debug, PartialEq, Eq, Clone, Copy)]
