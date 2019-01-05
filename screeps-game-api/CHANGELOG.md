@@ -8,6 +8,7 @@ Unreleased
   `T: HasPosition` (breaking) (#105)
 - Add `JsVec` structure for transparently wrapping typed JavaScript arrays without immediately
   unwrapping them. (#114)
+- Remove unnecessary allocation from PathFinder and Room.find calls (#112)
 
 0.3.0 (2018-11-??)
 ==================
